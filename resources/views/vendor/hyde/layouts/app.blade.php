@@ -14,7 +14,7 @@
     @stack('meta')
   
     <!-- The compiled Tailwind styles -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hydephp/hydephp.github.io@00a66a5f9f76ef7af960356f4110c76b3408ceec/media/app.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hydephp/hydefront@v1.1.0/tailwind.min.css">
     
     <!-- The core Hyde stylesheet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hydephp/hydefront@v1.0.0/hyde.css">
