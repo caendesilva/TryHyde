@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Stats;
 use Hyde\Framework\Actions\MarkdownConverter;
 use Hyde\Framework\Hyde;
 use Illuminate\Http\Request;
@@ -32,6 +33,11 @@ class HydePostController extends Controller
         $html = $this->renderMarkdown($post, $id);
 
         Storage::put('temp/posts/' .  $id, $html);
+
+        Stats::dispatch('pages_generated', 1);
+
+        Stats::dispatch('lines_of_markdown_converted', substr_count( $request->markdown, "\n" ));
+        Stats::dispatch('lines_of_html_generated', substr_count( $html, "\n" ));
 
         return redirect()->route('hyde.post.render', ['post' => $id]);
     }
@@ -66,6 +72,8 @@ class HydePostController extends Controller
         if (!$html) {
             abort(404);
         }
+
+        Stats::dispatch('pages_downloaded', 1);
 
         // Send a download response
         return response($html, 200)->header('Content-Type', 'text/html')->header('Content-Disposition', 'attachment; filename="try-hyde-' . $post . '.html"');
