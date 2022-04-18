@@ -33,6 +33,13 @@ Route::get('/preview', function () {
 });
 
 
-Route::post('/api/hyde/post/store', [HydePostController::class, 'store'])->name('hyde.post.store');
-Route::get('/api/hyde/post/{post}/download', [HydePostController::class, 'download'])->name('hyde.post.download');
+
+Route::middleware(['throttle:generations'])->group(function () {
+    Route::post('/api/hyde/post/store', [HydePostController::class, 'store'])->name('hyde.post.store');
+});
+
+Route::middleware(['throttle:downloads'])->group(function () {
+    Route::get('/api/hyde/post/{post}/download', [HydePostController::class, 'download'])->name('hyde.post.download');
+});
+
 Route::get('/hyde/post/render/{post}', [HydePostController::class, 'render'])->name('hyde.post.render');
