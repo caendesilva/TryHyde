@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HydePostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/api/hyde/post/store', [HydePostController::class, 'store'])->name('hyde.post.store');
+Route::get('/hyde/post/render/{post}', [HydePostController::class, 'render'])->name('hyde.post.render');
