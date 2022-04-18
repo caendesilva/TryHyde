@@ -122,9 +122,8 @@ return [
 
     'footer' => [
         'enabled' => true,
-        'markdown' => 'Site proudly built with [HydePHP](https://github.com/hydephp/hyde) 🎩',
+        'markdown' => 'This preview page was rendered using HydePHP through the [TryHyde!]('.config('app.url').') website.',
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Custom Navigation Menu Links
