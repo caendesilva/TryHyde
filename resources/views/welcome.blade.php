@@ -24,8 +24,8 @@
             </div>
             <div class="col-lg-6 text-lg-end">
                 <p>
-                    <a class="btn btn-outline-primary" href="https://hydephp.github.io/" role="button">Learn More</a>
-                    <a class="btn btn-primary" href="https://hydephp.github.io/docs/master/installation" role="button">Install Hyde!</a>
+                    <a class="btn btn-outline-primary m-1" href="https://hydephp.github.io/" role="button">Learn More</a>
+                    <a class="btn btn-primary m-1" href="https://hydephp.github.io/docs/master/installation" role="button">Install Hyde!</a>
                 </p>
             </div>
         </div>
