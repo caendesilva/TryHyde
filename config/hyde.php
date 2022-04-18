@@ -83,7 +83,7 @@ return [
         // 'author' => 'Mr. Hyde',
         // 'description' => 'My Hyde Blog',
         // 'keywords' => 'Static Sites, Blogs, Documentation',
-        'generator' => 'HydePHP '.Hyde\Framework\Hyde::version(),
+        'generator' => 'HydePHP Online Demo '.Hyde\Framework\Hyde::version(),
     ],
 
     /*
@@ -140,11 +140,24 @@ return [
     */
 
     'navigationMenuLinks' => [
-        // [
-        //     'title' => 'GitHub',
-        //     'destination' => 'https://github.com/hydephp/hyde',
-        //     'priority' => 1200,
-        // ],
+        [
+            'title' => 'Try HydePHP Online',
+            'destination' => config('app.url'),
+            'priority' => 1000,
+        ],
+
+        [
+            'title' => 'Docs',
+            'destination' => 'https://hydephp.github.io/docs/master/index.html',
+            'priority' => 1100,
+        ],
+
+        [
+            'title' => 'GitHub',
+            'destination' => 'https://github.com/hydephp/hyde',
+            'priority' => 1200,
+        ],
+
         // [
         //     'title' => 'Featured Blog Post',
         //     'slug' => 'posts/hello-world',
