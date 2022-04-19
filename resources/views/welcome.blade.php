@@ -66,7 +66,7 @@
                     <textarea class="form-control" id="markdown" name="markdown" rows="20">{{ $preset }}</textarea>
                 </div>
                 <div class="form-group mb-3">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit & Download HTML</button>
                 </div>
             </form>
         </div>

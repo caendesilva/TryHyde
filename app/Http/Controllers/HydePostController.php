@@ -8,7 +8,6 @@ use Hyde\Framework\Hyde;
 use Illuminate\Http\Request;
 use Hyde\Framework\Models\MarkdownPost;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
-use Illuminate\Support\Facades\Storage;
 
 class HydePostController extends Controller
 {
@@ -32,51 +31,26 @@ class HydePostController extends Controller
 
         $html = $this->renderMarkdown($post, $id);
 
-        Storage::put('temp/posts/' .  $id, $html);
-
         Stats::dispatch('pages_generated', 1);
 
         Stats::dispatch('lines_of_markdown_converted', substr_count( $request->markdown, "\n" ));
         Stats::dispatch('lines_of_html_generated', substr_count( $html, "\n" ));
 
-        return redirect()->route('hyde.post.render', ['post' => $id]);
-    }
-
-    /**
-     * Render an HTML page.
-     *
-     * @param  string  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function render(string $post)
-    {
-        $html = Storage::get('temp/posts/' . $post);
-
-        if (!$html) {
-            abort(404);
-        }
-
-        return response($html, 200)->header('Content-Type', 'text/html');
+        return $this->download($html, $id);
     }
 
     /**
      * Download a post.
      *
      * @param  string  $post
+     * @param  string  $id
      * @return \Illuminate\Http\Response
      */
-    public function download(string $post)
+    public function download(string $html, string $id)
     {
-        $html = Storage::get('temp/posts/' . $post);
-
-        if (!$html) {
-            abort(404);
-        }
-
         Stats::dispatch('pages_downloaded', 1);
 
-        // Send a download response
-        return response($html, 200)->header('Content-Type', 'text/html')->header('Content-Disposition', 'attachment; filename="try-hyde-' . $post . '.html"');
+        return response($html, 200)->header('Content-Type', 'text/html')->header('Content-Disposition', 'attachment; filename="try-hyde-' . $id . '.html"');
     }
 
     /**
@@ -109,7 +83,6 @@ class HydePostController extends Controller
             'title' => $post->title ?? 'My New Post',
             'markdown' => MarkdownConverter::parse($post->body),
             'currentPage' => 'posts/demo',
-            'downloadLink' => route('hyde.post.download', ['post' => $id]),
         ])->render();
     }
 }
