@@ -16,26 +16,29 @@
 <body>
     <header class="mx">
     </header>
-    <div class="p-5 bg-light">
+    <div class="p-3 pt-4 bg-light">
         <div class="container d-flex mx-auto">
             <div class="col-lg-6">
                 <h1>Try HydePHP!</h1>
-                <p class="lead">Try HydePHP right in your browser</p>
+                <p class="lead">Hyde is a CLI based static site generator that can try right in your browser using this website.</p>
             </div>
-            <div class="col-lg-6 text-lg-end">
+            <div class="col-lg-6 my-auto text-lg-end">
                 <p>
-                    <a class="btn btn-outline-primary m-1" href="https://hydephp.github.io/" role="button">Learn More</a>
-                    <a class="btn btn-primary m-1" href="https://hydephp.github.io/docs/master/installation" role="button">Install Hyde!</a>
+                    <a class="btn btn-outline-primary m-1" href="https://hydephp.github.io/" role="button">Learn
+                        More</a>
+                    <a class="btn btn-primary m-1" href="https://hydephp.github.io/docs/master/installation"
+                        role="button">Install Hyde!</a>
                 </p>
             </div>
         </div>
     </div>
 
     <div class="container mx-auto my-4">
-        <div class="row align-items-end">
-            <header class="col-lg-8">
-                <h2>Try writing a blog post in Markdown</h2>
-                <p class="lead">Hyde will generate a page with your content that you can view in your browser and download.</p>
+        <div class="row align-items-end flex-sm-nowrap">
+            <header class="flex-shrink" style="width: fit-content; flex-shrink: 1;">
+                <h2>Writing a blog post in Markdown</h2>
+                <p class="lead">Hyde will generate a page with your content that you can view in your browser and
+                    download.</p>
             </header>
             <form id="preset-form" action="" method="GET" class="ms-auto my-3" style="max-width: 200px;">
                 <select name="preset" id="preset" class="form-select" onchange="loadPreset()">
@@ -67,8 +70,7 @@
 
             <div class="form-group mb-3">
                 <label for="markdown" class="visually-hidden">Write some Markdown</label>
-                <textarea class="form-control" id="markdown" name="markdown"
-                    rows="20">{{ $preset }}</textarea>
+                <textarea class="form-control" id="markdown" name="markdown" rows="20">{{ $preset }}</textarea>
             </div>
 
             <div class="form-group mb-3">
@@ -81,19 +83,68 @@
         <hr>
     </div>
 
-    <section class="container mx-auto">
-        <h4>Statistics:</h4>
-        <div class="">
-            <x-stats-widget />
+    <div class="container mx-auto row px-0">
+
+        <footer class="container mx-auto col-lg-6">
+            <h4>Resources:</h4>
+            <p class="text-center">
+            <dl>
+                <div>
+                    <dt class="d-inline">
+                        Website:
+                    </dt>
+                    <dd class="d-inline">
+                        <a href="https://hydephp.github.io/">https://hydephp.github.io/</a>
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="d-inline">
+                        Documentation:
+                    </dt>
+                    <dd class="d-inline">
+                        <a href="https://hydephp.github.io/docs/">https://hydephp.github.io/docs/</a>
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="d-inline">
+                        GitHub:
+                    </dt>
+                    <dd class="d-inline">
+                        <a href="https://github.com/hydephp/hyde">https://github.com/hydephp/hyde</a>
+                    </dd>
+                </div>
+            </dl>
+            </p>
+        </footer>
+
+        
+        <div class="container mx-auto d-lg-none">
+            <hr>
         </div>
-    </section>
+    
+        <section class="container mx-auto col-lg-6">
+            <h4>Statistics:</h4>
+            <div class="">
+                <x-stats-widget />
+            </div>
+        </section>
+
+
+    </div>
+
+    <div class="container mx-auto">
+        <hr>
+    </div>
 
     <section class="container mx-auto">
-        <h4>Attributions:</h4>
+        <h4 class="h5">Attributions:</h4>
         <div class="">
             <ul>
                 <li>
-                    Lorem Mardownum example by <a href="https://jaspervdj.be/lorem-markdownum/" rel="nofollow noopener">https://jaspervdj.be/lorem-markdownum/</a>
+                    Lorem Mardownum example by <a href="https://jaspervdj.be/lorem-markdownum/"
+                        rel="nofollow noopener">https://jaspervdj.be/lorem-markdownum/</a>
                 </li>
                 <li>
                     <details>
@@ -103,11 +154,16 @@
                         <small>
                             <ul>
                                 <li>
-                                    Wikibooks contributors, "<a href="https://en.wikibooks.org/w/index.php?title=Cookbook:Swedish_Meatballs&oldid=2691161">Cookbook: Swedish Meatballs</a>," Wikibooks, The Free Textbook Project
+                                    Wikibooks contributors, "<a
+                                        href="https://en.wikibooks.org/w/index.php?title=Cookbook:Swedish_Meatballs&oldid=2691161">Cookbook:
+                                        Swedish Meatballs</a>," Wikibooks, The Free Textbook Project
                                     license Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
                                 </li>
                                 <li>
-                                    Image "<a href="https://commons.wikimedia.org/wiki/File:DSC00045-swedish_meatballs.jpg">DSC00045-swedish_meatballs.jpg</a>" by Øyvind Holmstad, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
+                                    Image "<a
+                                        href="https://commons.wikimedia.org/wiki/File:DSC00045-swedish_meatballs.jpg">DSC00045-swedish_meatballs.jpg</a>"
+                                    by Øyvind Holmstad, CC BY-SA 4.0 <https: //creativecommons.org/licenses/by-sa/4.0>,
+                                        via Wikimedia Commons
                                 </li>
                             </ul>
                         </small>
@@ -116,6 +172,8 @@
             </ul>
         </div>
     </section>
+
+  
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
