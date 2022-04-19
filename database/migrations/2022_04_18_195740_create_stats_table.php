@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('stats', function (Blueprint $table) {
             $table->id();
             $table->string('event');
-            $table->int('value');
+            $table->integer('value');
             $table->timestamps();
         });
     }

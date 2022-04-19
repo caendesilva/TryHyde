@@ -14,6 +14,8 @@ class HomeController extends Controller
      */
     public function show(Request $request)
     {
+        \App\Models\Stats::dispatch('site_views', 1);
+
         $preset = $this->getPreset($request);
 
         return view('welcome', [

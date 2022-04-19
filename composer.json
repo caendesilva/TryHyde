@@ -8,9 +8,7 @@
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
         "hyde/framework": "^0.11.0@beta",
-        "jenssegers/mongodb": "^3.9",
         "laravel/framework": "^9.2",
-        "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7"
     },
     "require-dev": {
