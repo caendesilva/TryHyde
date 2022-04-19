@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HydePostController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,25 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('/preview', function () {
-    $markdown = file_get_contents(resource_path('markdown/example.md'));
-    $document = Spatie\YamlFrontMatter\YamlFrontMatter::markdownCompatibleParse($markdown);
-    $post = new Hyde\Framework\Models\MarkdownPost($document->matter(), $document->body());
-
-    return view('hyde::layouts/post')->with([
-        'post' => $post,
-        'title' => $post->title ?? 'My New Post',
-        'markdown' => Hyde\Framework\Actions\MarkdownConverter::parse($post->body),
-        'currentPage' => 'posts/demo',
-    ])->render();
-});
-
-
+Route::get('/', [HomeController::class, 'show'])->name('home');
 
 Route::middleware(['throttle:generations'])->group(function () {
     Route::post('/api/hyde/post/store', [HydePostController::class, 'store'])->name('hyde.post.store');

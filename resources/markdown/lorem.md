@@ -1,10 +1,8 @@
 ---
 title: "Absitque subito agnovit hactenus"
-author.username: "cberzons2i"
-author.name: "Carlyle Berzons"
-published: "2019-09-05 13:30"
+author: "Carlyle Berzons"
 updated: "2020-06-21 10:40"
-tags: "recusandae illo"
+category: "recusandae illo"
 image: "https://picsum.photos/seed/quod-eligendi.png/960/640"
 description: "Enim iure et qui aspernatur voluptates quod. Neque aliquam sunt natus vel."
 ---
