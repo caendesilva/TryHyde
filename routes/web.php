@@ -17,6 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'show'])->name('home');
 
-Route::middleware(['throttle:generations'])->group(function () {
+if (config('app.env') === 'production') {
+    Route::group([
+        'domain' => 'tools.desilva.se',
+        'prefix' => 'try-hyde',
+    ], function () {
+        Route::middleware(['throttle:generations'])->group(function () {
+            Route::post('/api/hyde/post/store', [HydePostController::class, 'store'])->name('hyde.post.store');
+        });
+    });
+} else {
     Route::post('/api/hyde/post/store', [HydePostController::class, 'store'])->name('hyde.post.store');
-});
+}
