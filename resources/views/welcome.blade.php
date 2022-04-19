@@ -19,7 +19,7 @@
     <div class="p-3 pt-4 bg-light">
         <div class="container d-flex mx-auto">
             <div class="col-lg-6">
-                <h1>Try HydePHP!</h1>
+                <h1>Try HydePHP! <sup class="badge bg-primary" style="font-size: 14px">Beta</sup></h1>
                 <p class="lead">Hyde is a CLI based static site generator that can try right in your browser using this website.</p>
             </div>
             <div class="col-lg-6 my-auto text-lg-end">
