@@ -63,7 +63,7 @@
                 @endif
                 <div class="form-group mb-3">
                     <label for="markdown" class="visually-hidden">Write some Markdown</label>
-                    <textarea class="form-control" id="markdown" name="markdown" rows="20">{{ $preset }}</textarea>
+                    <textarea class="form-control" id="markdown" name="markdown" rows="20" maxlength="8192">{{ $preset }}</textarea>
                 </div>
                 <div class="form-group mb-3">
                     <button type="submit" class="btn btn-primary">Submit & Download HTML</button>
